@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--Pagina Principal-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthRoad - Passagens Rodoviárias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NorthRoad</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Encontre sua passagem de ônibus</h2>
+                <form id="searchForm">
+                    <input type="text" id="origem" placeholder="Origem" required>
+                    <input type="text" id="destino" placeholder="Destino" required>
+                    <input type="date" id="dataIda" required placeholder="Data Ida">
+                    <input type="date" id="dataVolta" required placeholder="Data Volta">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Por que escolher a NorthRoad?</h2>
+                <div class="feature">
+                    <h3>Variedade de Destinos</h3>
+                    <p>Mais de 500 destinos para você escolher.</p>
+                </div>
+                <div class="feature">
+                    <h3>Preços Acessíveis</h3>
+                    <p>Passagens com os melhores preços do mercado.</p>
+                </div>
+                <div class="feature">
+                    <h3>Facilidade de Compra</h3>
+                    <p>Compra rápida e segura em poucos cliques.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NorthRoad. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const origem = document.getElementById('origem').value;
+            const destino = document.getElementById('destino').value;
+            const dataIda = document.getElementById('dataIda').value;
+            const dataVolta = document.getElementById('dataVolta').value;
+
+            const queryString = `resultado.html?origem=${origem}&destino=${destino}&dataIda=${dataIda}&dataVolta=${dataVolta}`;
+            window.location.href = queryString;
+        });
+    </script>
+</body>
+</html>

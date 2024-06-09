@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca - NorthRoad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resultado.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NorthRoad</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="results" class="results">
+            <div class="container">
+                <h2>Resultados da Busca</h2>
+                <ul id="viagensList">
+                    <!-- Resultados das viagens aparecerão aqui -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NorthRoad. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const origem = urlParams.get('origem');
+            const destino = urlParams.get('destino');
+            const dataIda = urlParams.get('dataIda');
+            const dataVolta = urlParams.get('dataVolta');
+
+            // Simulando resultados de viagens
+            const viagens = [
+                { origem: 'São Paulo', destino: 'Rio de Janeiro', data: '2024-06-05', preco: 'R$ 150,00' },
+                { origem: 'São Paulo', destino: 'Belo Horizonte', data: '2024-06-05', preco: 'R$ 120,00' },
+                { origem: 'São Paulo', destino: 'Curitiba', data: '2024-06-06', preco: 'R$ 100,00' },
+            ];
+
+            const resultados = viagens.filter(viagem => viagem.origem === origem && viagem.destino === destino);
+
+            const viagensList = document.getElementById('viagensList');
+            viagensList.innerHTML = '';
+
+            if (resultados.length > 0) {
+                resultados.forEach(viagem => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <div class="viagem-card">
+                            <h3>${viagem.origem} para ${viagem.destino}</h3>
+                            <p>Data: ${viagem.data}</p>
+                            <p>Preço: ${viagem.preco}</p>
+                            <a href="checkout.html?origem=${viagem.origem}&destino=${viagem.destino}&data=${viagem.data}&preco=${viagem.preco}" class="button">Comprar</a>
+                        </div>
+                    `;
+                    viagensList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.innerHTML = '<p>Nenhuma viagem encontrada para os critérios informados.</p>';
+                viagensList.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

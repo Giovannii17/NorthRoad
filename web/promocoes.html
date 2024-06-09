@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções - NorthRoad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="promocoes.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NorthRoad</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="promocoes" class="promocoes">
+            <div class="container">
+                <h2>Promoções de Passagens</h2>
+                <ul id="promocoesList">
+                    <!-- Promoções de passagens aparecerão aqui -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NorthRoad. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulando promoções de passagens
+            const promocoes = [
+                { origem: 'São Paulo', destino: 'Rio de Janeiro', data: '2024-06-10', precoOriginal: 'R$ 150,00', precoPromocional: 'R$ 100,00' },
+                { origem: 'Belo Horizonte', destino: 'Vitória', data: '2024-06-12', precoOriginal: 'R$ 120,00', precoPromocional: 'R$ 80,00' },
+                { origem: 'Curitiba', destino: 'Florianópolis', data: '2024-06-15', precoOriginal: 'R$ 90,00', precoPromocional: 'R$ 60,00' },
+            ];
+
+            const promocoesList = document.getElementById('promocoesList');
+            promocoesList.innerHTML = '';
+
+            promocoes.forEach(promocao => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div class="promocao-card">
+                        <h3>${promocao.origem} para ${promocao.destino}</h3>
+                        <p>Data: ${promocao.data}</p>
+                        <p>De <span class="preco-original">${promocao.precoOriginal}</span> por <span class="preco-promocional">${promocao.precoPromocional}</span></p>
+                        <a href="checkout.html?origem=${promocao.origem}&destino=${promocao.destino}&data=${promocao.data}&preco=${promocao.precoPromocional}" class="button">Comprar</a>
+                    </div>
+                `;
+                promocoesList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

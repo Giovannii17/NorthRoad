@@ -1,0 +1,77 @@
+/* Estilos da seção de finalização de compra */
+.checkout {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.checkout h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.viagem-detalhes {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.viagem-detalhes h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.viagem-detalhes p {
+    font-size: 1rem;
+    color: #555;
+}
+
+#compraForm {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#compraForm h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+#compraForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#compraForm button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#compraForm button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .viagem-detalhes,
+    #compraForm {
+        width: 90%;
+        margin: auto;
+    }
+}

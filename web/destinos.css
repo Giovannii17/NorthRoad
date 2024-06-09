@@ -1,0 +1,44 @@
+/* Estilos da seção de destinos */
+.destinos {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.destinos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.destinos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.destinos li {
+    margin: 20px 0;
+    text-align: center; /* Centralizar o texto */
+}
+
+.destinos li h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.destinos li p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 300px; /* Adicionado para limitar a largura do texto */
+    margin: 0 auto;
+    text-align: center; /* Centralizar o texto */
+}
+
+@media (min-width: 768px) {
+    .destinos li {
+        display: inline-block;
+        width: calc(33.33% - 40px); /* Adicionado para exibir 3 destinos por linha */
+        margin: 20px;
+        vertical-align: top;
+    }
+}

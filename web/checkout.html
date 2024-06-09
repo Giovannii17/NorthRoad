@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - NorthRoad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NorthRoad</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="results.html">Resultados</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="checkout" class="checkout">
+            <div class="container">
+                <h2>Finalizar Compra</h2>
+                <div id="viagemDetalhes" class="viagem-detalhes">
+                </div>
+                <form id="compraForm">
+                    <h3>Detalhes do Passageiro</h3>
+                    <input type="text" id="nome" placeholder="Nome completo" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="telefone" placeholder="Telefone" required>
+                    <button type="submit">Finalizar Compra</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NorthRoad. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const origem = urlParams.get('origem');
+            const destino = urlParams.get('destino');
+            const data = urlParams.get('data');
+            const preco = urlParams.get('preco');
+
+            const viagemDetalhes = document.getElementById('viagemDetalhes');
+            viagemDetalhes.innerHTML = `
+                <h3>${origem} para ${destino}</h3>
+                <p>Data: ${data}</p>
+                <p>Preço: ${preco}</p>
+            `;
+
+            document.getElementById('compraForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Compra finalizada com sucesso!');
+            });
+        });
+    </script>
+</body>
+</html>

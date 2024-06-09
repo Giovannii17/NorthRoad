@@ -1,0 +1,54 @@
+/* Estilos da seção de resultados */
+.results {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.results h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.results li {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.viagem-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.viagem-card:hover {
+    transform: translateY(-5px);
+}
+
+.viagem-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.viagem-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .viagem-card {
+        width: 90%;
+    }
+}
